@@ -5,8 +5,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=PT+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/aos.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#004AF2">
 
     <title>CenterLogistic</title>
 </head>
@@ -15,22 +25,26 @@
 
     <!--  Header  -->
 
-    <header class="header header--dark">
+    <header class="header" id="header">
         <div class="container">
             <div class="header-inner">
-                <img src="assets/img/logo.svg" alt="CenterLogistic">
+                <a href="#" data-scroll="#intro"><img src="assets/img/logo.svg" alt="CenterLogistic"></a>
 
-                <nav class="nav">
-                    <a href="#" class="nav__link active">Services</a>
-                    <a href="#" class="nav__link">Clients</a>
-                    <a href="#" class="nav__link">Benefits</a>
-                    <a href="#" class="nav__link">Team</a>
-                    <a href="#news" class="nav__link">News</a>
-                    <a href="#" class="nav__link">Contact Us</a>
+                <nav class="nav" id="nav">
+                    <a data-scroll="#services" href="#" class="nav__link">Services</a>
+                    <a class="nav__link" href="#" data-scroll="#clients">Clients</a>
+                    <a href="#" class="nav__link" data-scroll="#benefits">Benefits</a>
+                    <a href="#" class="nav__link" data-scroll="#team">Team</a>
+                    <a href="#" class="nav__link" data-scroll="#mission">Mission</a>
+                    <a href="#" class="nav__link" data-scroll="#news">News</a>
+                    <a href="#" class="nav__link contact" data-modal="#becomeClientModal">Contact Us</a>
                 </nav>
 
-                <button class="burger" type="button">
+                <button class="burger" type="button" id="burger">
                     <img class="burger__icon" src="assets/img/burger.svg" alt="">
+                </button>
+                <button class="burger-close" type="button" id="burgerClose">
+                    <img class="burger-close__icon" src="assets/img/close.svg" alt="">
                 </button>
             </div>
         </div>
@@ -39,10 +53,19 @@
 
     <!--  Intro  -->
 
-    <div class="intro">
+    <div class="intro" id="intro">
+        <div class="intro__slider" id="introSlider">
+            <div>
+                <img class="intro__slider-photo" src="assets/img/background.jpg" alt="">
+            </div>
+            <div>
+                <img class="intro__slider-photo" src="assets/img/news-bg.jpg" alt="">
+            </div>
+        </div>
         <div class="container">
             <div class="intro-inner">
-                <div class="request-form request-form--intro">
+
+                <div class="request-form request-form--intro" data-aos="fade-right">
 
                     <div class="request-form__header">
                         <h3 class="request-form__title">Get Callback</h3>
@@ -60,15 +83,13 @@
                             <div class="form__group">
                                 <input type="email" class="input input--email" placeholder="Your e-mail">
                             </div>
-                            <button type="submit" class="btn btn--orange btn--block">
-                                Call me back
-                            </button>
+                            <button type="submit" class="btn btn--orange btn--block"  data-modal="#thanksModal">Call me back</button>
                         </form>
                     </div>
 
                 </div>
 
-                <div class="intro__text">
+                <div class="intro__text" data-aos="fade-left">
 
                     <div class="intro__subtitle">USA, Europe, Asia</div>
 
@@ -78,17 +99,23 @@
                     </h1>
 
                 </div>
+
+                <div class="intro__slider-arrows">
+                    <button class="intro__slider-btn intro__slider-btn--prev" type="button" id="introSliderPrev">Prev</button>
+                    <button class="intro__slider-btn intro__slider-btn--next" type="button" id="introSliderNext">Next</button>
+                </div>
+
             </div> <!--  /.Intro--inner  -->
         </div>
     </div> <!--  /.Intro  -->
 
 
     <!--  Services  -->
-    <section class="section">
+    <section class="section" id="services" data-scrollspy="#services">
         <div class="container">
             <div class="services">
                <h2 class="services__main-title">Services</h2>
-                <div class="services__item">
+                <div class="services__item" data-aos="fade-down">
                     <h4 class="services__title">Ground shipping</h4>
                     <div class="services__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</div>
                     <div class="services__footer">
@@ -96,7 +123,7 @@
                     </div>
                 </div>
 
-                <div class="services__item">
+                <div class="services__item" data-aos="fade-down" data-aos-delay="100">
                     <h4 class="services__title">Railway shipping</h4>
                     <div class="services__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</div>
                     <div class="services__footer">
@@ -104,7 +131,7 @@
                     </div>
                 </div>
 
-                <div class="services__item">
+                <div class="services__item" data-aos="fade-down" data-aos-delay="200">
                     <h4 class="services__title">Water shipping</h4>
                     <div class="services__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut </div>
                     <div class="services__footer">
@@ -112,7 +139,7 @@
                     </div>
                 </div>
 
-                <div class="services__item">
+                <div class="services__item" data-aos="fade-down" data-aos-delay="300">
                     <h4 class="services__title">Air shipping</h4>
                     <div class="services__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed tempor invidunt ut labore et dolore magna aliquyam</div>
                     <div class="services__footer">
@@ -127,49 +154,49 @@
 
     <!--  Clients  -->
 
-    <section class="section section--map">
+    <section class="section section--map" id="clients" data-scrollspy="#clients">
         <div class="container">
             <h2 class="section__title"><span>Our</span> clients</h2>
 
             <div class="clients">
                 <div class="clients__logos">
                     <ul class="clients__list">
-                        <li>
+                        <li data-aos="fade-right">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/atica.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="50">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/hex-lab.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="100">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/amara.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="150">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/muzica-2.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="200">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/solaytic.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="250">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/hexa.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="300">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/utosia-2.svg" alt="">
                             </a>
                         </li>
-                        <li>
+                        <li data-aos="fade-right" data-aos-delay="350">
                             <a href="#" target="_blank">
                                 <img class="clients__list-logo img" src="assets/img/clients/fox-hub.svg" alt="">
                             </a>
@@ -177,8 +204,8 @@
                     </ul>
                 </div>
                 <div class="clients__reviews">
-                    <div class="reviews">
-                        <div class="reviews__items">
+                    <div class="reviews" id="reviewsSlider">
+                        <div class="reviews__item">
                             <div class="reviews__header">
                                 <img src="https://via.placeholder.com/100" alt="" class="reviews__photo">
                                 <div class="reviews__name">John Smith</div>
@@ -189,14 +216,26 @@
                                 <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, </p>
                             </div>
                         </div>
+                        <div class="reviews__item">
+                            <div class="reviews__header">
+                                <img src="https://via.placeholder.com/100" alt="" class="reviews__photo">
+                                <div class="reviews__name">John Smith</div>
+                                <div class="reviews__company">FOX Hub CEO</div>
+                            </div>
+                            <div class="reviews__content">
+                                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. </p>
+                                <p>Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div> <!-- /.clients -->
 
-            <a href="#" class="btn btn--orange btn--shadow">Become a client</a>
-            <div class="clients__subtitle">
-            <img src="assets/img/_ionicons_svg_ios-heart-empty.svg" alt="" class="heart">
-            we love our clients
+            <a href="#" class="btn btn--orange btn--shadow" data-modal="#becomeClientModal">Become a client</a>
+            <div class="clients-love">
+                <img src="assets/img/_ionicons_svg_ios-heart-empty.svg" alt="" class="heart">
+                we love our clients
             </div>
         </div> <!-- /.container -->
     </section>
@@ -204,24 +243,24 @@
 
     <!--  Benefits  -->
 
-    <div class="section">
+    <div class="section" id="benefits" data-scrollspy="#benefits">
         <div class="container">
             <div class="benefits">
                 <div class="benefits__content">
                     <ul class="benefits__list">
-                        <li>
+                        <li data-aos="fade-left">
                             <h3 class="benefits__title">Safety</h3>
                             <div class="benefits__subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</div>
                         </li>
-                        <li>
+                        <li data-aos="fade-left" data-aos-delay="100" data-aos-anchor=".benefits">
                             <h3 class="benefits__title">High quality drivers</h3>
                             <div class="benefits__subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</div>
                         </li>
-                        <li>
+                        <li data-aos="fade-left" data-aos-delay="150" data-aos-anchor=".benefits">
                             <h3 class="benefits__title">Guarantee &amp; Support 24/7</h3>
                             <div class="benefits__subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</div>
                         </li>
-                        <li>
+                        <li data-aos="fade-left" data-aos-delay="200" data-aos-anchor=".benefits">
                             <h3 class="benefits__title">Personal manager</h3>
                             <div class="benefits__subtitle">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod</div>
                         </li>
@@ -236,12 +275,12 @@
 
 <!--    Team    -->
 
-    <section class="section team-section">
+    <section class="section team-section" id="team" data-scrollspy="#team">
         <div class="container">
             <div class="team">
                 <h2 class="section__title"><span>Our</span> team</h2>
                 <ul class="team__list">
-                    <li class="member">
+                    <li class="member" data-aos="fade-in">
                         <img class="member__photo img" src="assets/img/john.jpg" alt="">
                         <h5 class="member__name">John Smith</h5>
                         <div class="member__profession">
@@ -252,7 +291,7 @@
                             <a href="tel:+987412512543" class="member__tel"><img src="assets/img/call_black.svg" alt="">+987412512543</a>
                         </div>
                     </li>
-                    <li class="member">
+                    <li class="member" data-aos="fade-in" data-aos-delay="100">
                         <img class="member__photo img" src="assets/img/Daniel.jpg" alt="">
                         <h5 class="member__name">Daniel Kore</h5>
                         <div class="member__profession">
@@ -263,7 +302,7 @@
                             <a href="tel:+987423252253" class="member__tel"><img src="assets/img/call_black.svg" alt="">+987423252253</a>
                         </div>
                     </li>
-                    <li class="member">
+                    <li class="member" data-aos="fade-in" data-aos-delay="200">
                         <img class="member__photo img" src="assets/img/Anna.jpg" alt="">
                         <h5 class="member__name">Anna Filler</h5>
                         <div class="member__profession">
@@ -281,33 +320,33 @@
 
 
 <!--    Mission    -->
-    <section class="section">
+    <section class="section" id="mission" data-scrollspy="#mission">
         <div class="container">
             <div class="mission">
                <h2 class="mission__header">OUR MISSION</h2>
-                <div class="mission__content">
+                <div class="mission__content" data-aos="fade-up">
                     <h4 class="mission__content__title">To provide our customer qualified services according the international</h4>
                     <div class="mission__content__subtitle">Book your Cargo now &amp; Your job just got a lot easier</div>
 
                 </div>
 
-                <a href="" class="btn btn--orange btn--shadow">Become a client</a>
+                <a href="" class="btn btn--orange btn--shadow" data-modal="#becomeClientModal">Become a client</a>
             </div><!--/.mission-->
         </div>
     </section>
 
 
 <!--    News    -->
-    <section id="news" class="section">
+    <section id="news" class="section" data-scrollspy="#news">
         <div class="container">
             <h2 class="section__title"><span>Interesting</span> to read</h2>
             <div class="news__inner">
-                <div class="news__item">
+                <div class="news__item" data-aos="fade-in">
                     <h5 class="news__title">News title</h5>
                     <div class="news__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit </div>
                     <time class="news__date" pubtime="2019-03-21">21 March, 2019</time>
                 </div>
-                 <div class="news__item">
+                 <div class="news__item" data-aos="fade-in">
                     <h5 class="news__title">News title</h5>
                     <div class="news__text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</div>
                     <time class="news__date" pubtime="2019-03-21">21 March, 2019</time>
@@ -343,9 +382,10 @@
 
 <!--        Modals        -->
 
-    <div class="modal" id="becomeClientModal" >
+    <div class="modal" id="becomeClientModal">
         <div class="modal__inner">
-            <div class="modal__header">
+            <div class="modal__content">
+                <div class="modal__header">
                 <h4 class="modal__title">Need to deliver your cargo?<br>We can help!</h4>
                 <div class="modal__text">
                     <p>Fill a little form and we will call you back!</p>
@@ -363,7 +403,7 @@
                     <div class="form__group">
                         <input type="email" class="input input--email input--black" placeholder="Your e-mail">
                     </div>
-                        <button type="submit" class="btn btn--orange btn--block">Call me back</button>
+                        <button type="submit" class="btn btn--orange btn--block"  data-modal="#thanksModal">Call me back</button>
                 </form>
             </div>
 
@@ -376,16 +416,18 @@
                 </div>
             </div>
 
-            <button type="button" class="close-btn"><img src="assets/img/close.svg" alt="Close"></button>
+            <button type="button" class="close-btn" data-close=""><img src="assets/img/close.svg" alt="Close"></button>
+            </div>
         </div>
         <!--  /.modal__inner  -->
 
     </div> <!--  /.modal  -->
 
 
-    <div class="modal" id="thanksModal" >
+    <div class="modal" id="thanksModal">
         <div class="modal__inner">
-            <img class="modal__tick" src="assets/img/tick.svg" alt="">
+            <div class="modal__content">
+                <img class="modal__tick" src="assets/img/tick.svg" alt="">
             <div class="modal__header">
                 <h4 class="modal__title">Thanks for your request</h4>
                 <div class="modal__text">
@@ -402,7 +444,8 @@
                 </div>
             </div>
 
-            <button type="button" class="close-btn"><img src="assets/img/close.svg" alt="Close"></button>
+            <button type="button" class="close-btn" data-close=""><img src="assets/img/close.svg" alt="Close"></button>
+            </div>
         </div>
         <!--  /.modal__inner  -->
 
@@ -410,7 +453,12 @@
 
 
 
+<!--  Javascript  -->
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="assets/js/slick.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/app.js"></script>
 
 </body>
 </html>
